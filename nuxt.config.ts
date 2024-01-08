@@ -10,10 +10,15 @@ export default defineNuxtConfig({
     inject: true,
     format: ['webp']
   },
+  css:['~/assets/css/main.css'],
+  svgo: {
+    autoImportPath: './assets/svg',
+  },
   modules: [
     '@nuxtjs/tailwindcss',
-  '@nuxt/image',
-  '@vee-validate/nuxt',
+    '@nuxt/image',
+    'nuxt-svgo',
+    '@vee-validate/nuxt',
   ],
   devtools: { enabled: true },
   

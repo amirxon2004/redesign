@@ -6,12 +6,12 @@
     <div  v-if="compairitems.length > 0" >
       <SectionsCompairCards :swipes="swipes" class="" :items="compairitems" />
     </div>
-    <!-- <div class="" v-else>
+    <div class="" v-else>
 
    <BaseCardsEmptyCard  :src="comparison" title="Список сравнения пуст" desc="Чтобы сравнить понравившиеся товары, добавьте их в список Добавить к сравнению." />
     
 <SectionsShortItems  catlink="#" cattitle="Рекомендуемые товары" catdesc="Вам может быть интересно" :items="customitems" /> 
-    </div> -->
+    </div>
 
 </template>
 <script setup> 

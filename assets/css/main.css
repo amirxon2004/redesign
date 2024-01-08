@@ -5,8 +5,9 @@
 router-link-active router-link-exact-active
 
 .router-link-exact-active {
-    color: #fff !important;
-    background: #5C6AC4;
+      background: #EBF2EE;
+    border-right: 2px solid #2CB26D;
+    color: #2CB26D;
 }
 
 .router-link-exact-active {
@@ -16,13 +17,18 @@ router-link-active router-link-exact-active
 
 }
 .router-link-exact-active svg {
-    fill: #2CB26D;
+    fill: #2CB26D !important;
     
 }
 
+.link-tabs:hover svg {
+    fill: #2CB26D; 
+}
+
 .router-link-exact-active:hover {
-    color: #fff;
-    background: #5C6AC4;
+    background: #eaf9f0;
+    border-right: 2px solid #2CB26D;
+    color: #2CB26D;
 }
 
 .nuxt-link-active .active-primary {

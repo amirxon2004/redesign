@@ -3,53 +3,27 @@
  
         <div class="py-4 border rounded-xl">
             <ul class="flex flex-col">
-                <li>
-                    <a :class="{ active: isCurrentPath('/profile/details') }" href="/profile/details"
-                        class="flex gap-2 text-base items-center p-4  "><img :src="user_green" class="w-5 h-5" alt="">
-                        Персональные данные</a>
-                </li> 
-                <li>
-                    <a :class="{ active: isCurrentPath('/documents') }" href="/documents"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="note2" class="w-5 h-5" alt="">
-                        Документы</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/notifications') }" href="/notifications"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="notification" class="w-5 h-5" alt="">
-                        Уведомление</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/cards') }" href="/cards"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="cards" class="w-5 h-5" alt=""> Карты</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/orders') }" href="/orders"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="order" class="w-5 h-5" alt=""> Заказы</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/billing') }" href="/billing"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="bill" class="w-5 h-5" alt=""> Биллинг</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/favorite') }" href="/favorite"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="heart" class="w-5 h-5" alt="">
-                        Избранное</a>
-                </li>
-                <li>
-                    <a :class="{ active: isCurrentPath('/cart') }" href="/cart"
-                        class="flex gap-2 text-base items-center  p-4"><img :src="shopping_cart" class="w-5 h-5" alt="">
-                        Корзина</a>
-                </li>
-
-                <li>
-                    <a href="#" class="flex gap-2 text-base items-center text-[#FB577C] p-4"><img :src="login"
-                            class="w-5 h-5" alt=""> Выйти</a>
-                </li>
-                <nuxt-link class="flex gap-2 text-base items-center text-[#FB577C] p-4"
-                    to="/profile/details"><Icon name="bill" /> main</nuxt-link>
-                <nuxt-link class="flex gap-2 text-base items-center text-[#FB577C] p-4" to="/profile">
-                    <Icon name="bill" />
-                </nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/details"><Icon  name="user-t" /> Персональные данные</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/documents"><Icon name="note-2" /> Документы</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/notifications"><Icon name="notification" /> Уведомление</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/cards"><Icon name="cards" /> Карты</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/orders"><Icon name="box" /> Заказы</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/billing"><Icon name="bill" /> Биллинг</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/favorite"><Icon name="heart" /> Избранное</nuxt-link>
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-slate-500 p-4"
+                    to="/profile/cart"><Icon name="shopping-cart" /> Корзина</nuxt-link>
+                    
+                    <nuxt-link class="flex gap-2 text-base link-tabs items-center hover:bg-[#eaf9f0] hover:text-[#2CB26D] text-[#FB577C] p-4"
+                    to="/profile/exit"><Icon name="login" className="m-0 "/> Выйти</nuxt-link>
+                
+               
             </ul>
         </div>
     </div>

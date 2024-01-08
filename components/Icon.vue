@@ -1,7 +1,7 @@
 <template>
-  <div>
+  
       <component :is="getIcon(`${props.name}`)" :class="props.className" :filled="true" :fontControlled="true" />
-  </div>
+  
 </template>
 
 <script setup>
@@ -13,12 +13,7 @@ const props  = defineProps({
   name:{
       type:String,default:''
   },
-  w:{
-      type:String,default:'auto'
-  },
-  h:{
-      type:String,default:'auto'
-  }
+  
 })
 
 </script>

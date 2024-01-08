@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+router-link-active router-link-exact-active
+
+.router-link-exact-active {
+    color: #fff !important;
+    background: #5C6AC4;
+}
+
+.router-link-exact-active {
+    background: #EBF2EE;
+    border-right: 2px solid #2CB26D;
+    color: #2CB26D;
+
+}
+.router-link-exact-active svg {
+    fill: #2CB26D;
+    
+}
+
+.router-link-exact-active:hover {
+    color: #fff;
+    background: #5C6AC4;
+}
+
+.nuxt-link-active .active-primary {
+    color: #fff !important;
+    background: #5c6ac4;
+}
+.nuxt-link-active .active-primary:hover {
+    color: #fff;
+    background: #5c6ac4;
+}
+.nuxt-link-active .active-primary-color {
+    color: #5c6ac4;
+}

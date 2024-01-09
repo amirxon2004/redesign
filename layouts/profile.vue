@@ -19,5 +19,16 @@
 
 </script>
 <style>
- 
-</style> 
+@media not all and (min-width: 1430px) {
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1440px !important;
+}
+}
+
+.container {
+    max-width: 1440px !important;
+}
+</style>

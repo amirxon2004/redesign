@@ -21,4 +21,7 @@
     padding-right: 1rem;
 }
 }
+.container {
+    max-width: 1440px !important;
+}
 </style>

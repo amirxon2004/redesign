@@ -12,14 +12,14 @@
   <div class="" v-show="activeTab === 1">
     <div class="p-4 flex flex-col">
       <h1 class="font-medium text-xl">Персональные данные</h1>
-      <div class="flex items-center relative">
+      <div class="flex items-center relative max-md:flex-col">
         <div class=" w-24 relative bg-slate-100 flex items-center justify-center p-8 rounded-full m-4 col-span-1">
           <img :src="gallery" class="w-8 h-8 " alt="">
           <a href="#" class="absolute bottom-0 right-0 p-3 border border-slate-200 bg-white rounded-full"><Icon name="mode" /></a>
         </div>
         <div class="flex col-span-1"><h1 class="font-bold text-2xl text-nowrap ">KANS BARAKA MCHJ</h1></div>
       </div>
-      <div class="flex grid grid-cols-3 gap-5 mt-5">
+      <div class="flex grid grid-cols-3 max-md:grid-cols-1 gap-5 mt-5">
         <div class="flex  flex-col col-span-1">
           <BaseInput label="Электронная почта" placeholder="-" name="num" class="" value="" type="text" />
 
@@ -57,7 +57,7 @@
     </div>
     <div class="p-4 flex flex-col border">
       <h1 class="font-medium text-xl">Введите регион доставки</h1>
-      <div class="grid grid-cols-3 gap-5 my-5">
+      <div class="grid grid-cols-3 gap-5 max-md:grid-cols-1 my-5">
         <BaseMenuSelect title="Махалля" :selects="maxalla" ShowId="maxalla" ClickId="maxallabtn"/>
 
           <BaseMenuSelect title="Район" :selects="selects" ShowId="rayon" ClickId="rayonbtn"/>
@@ -72,7 +72,7 @@
       </div>
       <div class="p-4 flex flex-col border">
       <h1 class="font-medium text-xl">Способ получения уводемления</h1>
-      <div class="my-5 flex gap-5">
+      <div class="my-5 flex gap-5 max-md:flex-col">
         <BaseCheck :notifs="notifs" />
         <!-- message-text -->
       </div>
@@ -82,7 +82,7 @@
   <div class="" v-show="activeTab === 2">
     <div class="p-4 flex flex-col">
       <h1 class="font-medium text-xl">Персональные данные</h1>
-      <div class="flex items-center relative">
+      <div class="flex items-center relative max-md:flex-col">
         <div class=" w-24 relative bg-slate-100 flex items-center justify-center p-8 rounded-full m-4 ">
           <img :src="gallery" class="w-8 h-8 " alt="">
           <a href="#" class="absolute bottom-0 right-0 p-3 border border-slate-200 bg-white rounded-full"><Icon name="mode" /></a>
@@ -92,9 +92,9 @@
           <a href="#" class="text-[#2CB26D]">Добавить лого</a>
         </div>
       </div>
-      <div class="flex grid grid-cols-2 gap-5 mt-5">
+      <div class="flex grid grid-cols-2 max-md:grid-cols-1 gap-5 mt-5">
         <div class="flex  flex-col col-span-1">
-         <div class="flex grid grid-cols-2 gap-3">
+         <div class="flex grid grid-cols-2 max-md:grid-cols-1 gap-3">
           <BaseInput label="Электронная почта" placeholder="-" name="num" class="" value="" type="text" />
 
           <BaseInput label="Электронная почта" placeholder="-" name="num" class="" value="" type="text" />
@@ -127,7 +127,7 @@
     </div>
     <div class="p-4 flex flex-col">
       <h1 class="font-medium text-xl">Руководитель предприятия</h1>
-      <div class="grid grid-cols-2 gap-5">
+      <div class="grid grid-cols-2 max-md:grid-cols-1 gap-5">
         <div class="col-span-1">
           <BaseInput label="Электронная почта" placeholder="-" name="num" class="" value="" type="text" />
 

@@ -1,0 +1,93 @@
+
+
+.button{
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #2CB26D;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #fff;
+    border: 1px solid #2CB26D;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &.outlined{
+        background: none;
+        color: #2CB26D;
+    }
+    &.hover-opacity:hover{
+        opacity: 0.8;
+    }
+    &.hover-scale:hover{
+        transform: scale(1.01);
+    }
+
+    &.light{
+        background: #FCFCFC;
+        border: 1px solid #FCFCFC;
+        color: #48545D;  
+    }
+    &:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+ 
+
+}
+
+.swiper-wrapper{
+    z-index: 0;
+}
+
+.scroll{
+    overflow: auto;
+    &.default{
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #cfcfcf !important;
+            border-radius: 5px !important;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1 !important;
+        }
+    }
+
+}
+
+.el-checkbox__inner{
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.el-checkbox.el-checkbox--large .el-checkbox__inner{
+    width: 20px !important;
+    height: 20px !important;
+    &::after{
+        left: 6px !important;
+        height: 9px !important;
+    }
+}
+
+.el-checkbox.el-checkbox--large{
+    height: auto !important;
+}
+
+
+.el-date-editor.el-input, .el-date-editor.el-input__wrapper{
+    width: 100% !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

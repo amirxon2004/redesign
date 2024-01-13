@@ -1,34 +1,22 @@
 <template>
-    <MyHeader />
-    <div class="container">
-        <BaseBreadCrumb />
-    <div class="my-10 grid grid-cols-4 gap-5">
-       <div class="col-span-1">
-        <BaseMenuProfile />
-       </div>
-        <div class="col-span-3">    
-        <NuxtPage />
+    <div class="w-full min-h-[100vh] flex flex-col justify-between">
+        <div class="w-full">
+            <TopBar />
+            <AppNav />
+            <div class="w-full flex justify-center flex-col items-center p-8 align-top ">
+                <div class="f-container mb-[1.5rem]">
+                    <el-breadcrumb separator="/" class="breadcrumb-pro">
+                    <el-breadcrumb-item><nuxt-link to="/" class="bread-link">Главная</nuxt-link></el-breadcrumb-item>
+                    <el-breadcrumb-item><nuxt-link to="/profile" class="bread-link">Персональные
+                            данные</nuxt-link></el-breadcrumb-item>
+                </el-breadcrumb>
+                </div>
+                <div class="f-container flex gap-2 items-start justify-start">
+                    <ProfileMenu />
+                    <NuxtPage />
+                </div>
+            </div>
         </div>
-    </div> 
+        <AppFooter />
     </div>
-    <MyFooter />
-
-</template> 
-<script setup> 
- 
-
-</script>
-<style>
-@media not all and (min-width: 1430px) {
-
-.container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 1440px !important;
-}
-}
-
-.container {
-    max-width: 1440px !important;
-}
-</style>
+</template>

@@ -1,27 +1,10 @@
 <template>
-    <div>
-      <MyHeader />
-      <div class="container">
-        <NuxtPage />
-      </div>
-      <MyFooter />
+    <div  class="w-full min-h-[100vh] flex flex-col justify-between">
+        <div class="w-full">
+            <TopBar />
+            <AppNav />
+            <NuxtPage /> 
+        </div> 
+        <AppFooter />
     </div>
-
-    
-  </template> 
-<script>
-
-</script>
-
-<style>
-@media not all and (min-width: 1430px) {
-
-.container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-}
-.container {
-    max-width: 1440px !important;
-}
-</style>
+</template>

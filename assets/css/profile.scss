@@ -1,0 +1,99 @@
+.el-breadcrumb__inner a {
+    color: var(--Grey, #7A889B);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.bread-link {
+    &.router-link-active {
+        color: var(--Grey, #7A889B);
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400 !important;
+    }
+
+    &.router-link-exact-active {
+        color: var(--Black, #48545D) !important;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700 !important;
+        line-height: normal;
+    }
+
+    &:hover {
+        color: var(--color-3, #2CB26D) !important;
+    }
+}
+
+
+.profile-link {
+    &.router-link-active {
+        color: var(--Grey, #7A889B);
+        font-family: Inter;
+        // font-size: 12px;
+        font-weight: 400 !important;
+    }
+
+    &.router-link-exact-active {
+        // font-size: 12px;
+        font-weight: 700 !important;
+        background-color: rgba(44, 178, 109, 0.1);
+        border-right: 2px solid #2CB26D;
+
+        .profile-link-text {
+            font-weight: 500;
+            color: #2CB26D;
+        }
+
+        .profile-link-svg {
+            path {
+                stroke: #2CB26D;
+            }
+        }
+    }
+
+    &:hover {
+        //color: var(--color-3, #2CB26D) !important;
+        background-color: rgba(44, 178, 109, 0.1);
+
+        .profile-link-svg {
+            path {
+                stroke: #2CB26D;
+            }
+        }
+    }
+
+}
+
+
+.active-tab {
+    border-radius: 0 0 0.75rem 0.75rem;
+    border: 1px solid var(--Line, #DFE2E9);
+    border-top: none;
+    background: var(--White, #FFF);
+}
+.filters-card{
+    .el-form-item{
+        max-width: 180px;
+    }
+    
+}
+.custom-checkbox{
+   .el-checkbox{
+    .el-checkbox__input{
+      width: 22px !important;
+      height: 22px !important;
+    }
+     .el-checkbox__inner{
+        height: 22px !important;
+        width: 22px !important;
+         &::after{
+            height: 11px !important;
+            left: 8px !important;
+         }
+     }
+   }
+}

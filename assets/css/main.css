@@ -2,43 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-router-link-active router-link-exact-active
-
-.router-link-exact-active {
-      background: #EBF2EE;
-    border-right: 2px solid #2CB26D;
-    color: #2CB26D;
+@font-face {
+    font-family: 'Inter';
+    src: url('@/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
 }
 
-.router-link-exact-active {
-    background: #EBF2EE;
-    border-right: 2px solid #2CB26D;
-    color: #2CB26D;
-
-}
-.router-link-exact-active svg {
-    fill: #2CB26D !important;
-    
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
 }
 
-.link-tabs:hover svg {
-    fill: #2CB26D; 
+body::-webkit-scrollbar-thumb {
+    background: #cfcfcf !important;
+    border-radius: 5px !important;
+}
+body::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
 }
 
-.router-link-exact-active:hover {
-    background: #eaf9f0;
-    border-right: 2px solid #2CB26D;
-    color: #2CB26D;
+*{
+    box-sizing: border-box;
+    font-family: 'Inter';
 }
 
-.nuxt-link-active .active-primary {
-    color: #fff !important;
-    background: #5c6ac4;
+.f-container{
+    width: 100%;
+    max-width: 1300px;
+} 
+
+.el-radio-group {
+    margin-right: 12px;
 }
-.nuxt-link-active .active-primary:hover {
-    color: #fff;
-    background: #5c6ac4;
+
+.mb-0 {
+    margin-bottom: 0 !important;
 }
-.nuxt-link-active .active-primary-color {
-    color: #5c6ac4;
+
+/* table{
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #212b36;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+    border-collapse: collapse;
+} */
+.label-size label {
+    font-size: 0.75rem !important;
+    margin-bottom: 12px !important;
+    line-height: 22px !important;
+    text-wrap: nowrap;
+}
+
+.el-select {
+    width: 100%;
+
 }

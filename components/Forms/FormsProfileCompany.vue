@@ -40,7 +40,7 @@
                             </el-form-item>
 
                             <el-form-item label="Регион" class="mb-0 w-full">
-                                <el-select v-model="sizeForm1.RegionDetails" placeholder="Выберите регион">
+                                <el-select v-model="sizeForm1.obl_id" placeholder="Выберите регион">
                                     <el-option v-for="(region,j) in regions" :key="j" :label="region.name"
                                     :value="region.id" />
                                 </el-select>
@@ -63,9 +63,9 @@
                                 </div>
                             </div>
                             <el-form-item label="Район" class="mb-0 w-full">
-                                <el-select  v-model="sizeForm1.RegionDelivery"
+                                <el-select  v-model="sizeForm1.area_id"
                                     placeholder="Выберите район">
-                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm1.RegionDetails)?.districts" :key="l" :label="rayon.name"
+                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm1.obl_id)?.districts" :key="l" :label="rayon.name"
                                     :value="rayon.id" />
                                 </el-select>
                             </el-form-item>
@@ -136,6 +136,7 @@
 
         </div>
     </div>
+ <!-- <pre>{{ regions }}</pre> -->
 </template>
 <script setup>
 import { ref, reactive, computed, onMounted } from "vue";
@@ -147,7 +148,11 @@ const regions = dictionaryStore.regions
 const sizeForm1 = reactive({
     RegionDetails: null,
     RegionDelivery: null,
+    obl_id:null,
+    area_id:null,
 })
+
+
 const getUserProfile = async () => {
   try {
     const res = await useApi("/api/v2/buyer/profile", {});

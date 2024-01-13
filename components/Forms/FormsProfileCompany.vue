@@ -6,14 +6,14 @@
                 <div class=" w-24 relative bg-slate-100 flex items-center justify-center p-8 rounded-full m-4 col-span-1">
                     <Icon name="icon-gallery" class="m-0" width="28px" height="28px" />
                      <div class="absolute cursor-pointer bottom-0 right-0 p-2 border border-slate-200 bg-white rounded-full">
-                        <label for="upload-foto" class="cursor-pointer">
+                         <label for="upload-foto" class="cursor-pointer">
                              <Icon name="icon-edit-green" class="!m-0" width="12px" height="12px" />
                         </label>
                         <input type="file" class="hidden" id="upload-foto">
                     </div>
                 </div>
                 <div class="flex flex-col col-span-1"> 
-                    <h1 class="font-bold text-2xl text-nowrap ">KANS BARAKA MCHJ</h1>
+                    <h1 class="font-bold text-2xl text-nowrap ">{{ sizeForm1.header_name }}</h1>
                     <label for="upload-foto" class="text-[#2CB26D] cursor-pointer">Добавить лого</label>
                 </div>
             </div>
@@ -25,48 +25,48 @@
                         <div class="flex flex-col gap-2">
                             <div class="gap-4 grid-cols-2 grid">
                                 <el-form-item label="СТИР" class="mb-0 col-span-1">
-                                    <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                    <el-input v-model="sizeForm1.num"  placeholder="12345"  />
                                 </el-form-item>
                                 <el-form-item label="ЖШШИР" class="mb-0 col-span-1">
-                                    <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                    <el-input v-model="sizeForm1.header_pinfl" placeholder="+998" />
                                 </el-form-item>
                             </div>
 
                             <el-form-item label="МФО" class="mb-0">
-                                <el-select v-model="sizeForm1.option1" placeholder="Выбрать">
+                                <el-select v-model="sizeForm1.mfo" placeholder="Выбрать">
                                     <el-option label="Zone one" value="shanghai" />
                                     <el-option label="Zone two" value="beijing" />
                                 </el-select>
                             </el-form-item>
 
                             <el-form-item label="Регион" class="mb-0 w-full">
-                                <el-select v-model="sizeForm1.selectedRegion2" placeholder="Выберите регион">
-                                    <el-option v-for="region2 in sizeForm1.regions2" :key="region2.id" :label="region2.name"
-                                        :value="region2.id" />
+                                <el-select v-model="sizeForm1.RegionDetails" placeholder="Выберите регион">
+                                    <el-option v-for="(region,j) in regions" :key="j" :label="region.name"
+                                    :value="region.id" />
                                 </el-select>
                             </el-form-item>
                         </div>
                         <div class="flex flex-col gap-2">
                             <el-form-item label="Имя (Сокращеное)" class="mb-0 col-span-1">
-                                <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                <el-input v-model="sizeForm1.name" placeholder="Введите Имя" />
                             </el-form-item>
                             <div class="grid grid-cols-2 gap-5">
                                 <div class="col-span-1">
                                     <el-form-item label="Номер счета" class="mb-0 col-span-1">
-                                        <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                        <el-input v-model="sizeForm1.header_passport_number" placeholder="+998" />
                                     </el-form-item>
                                 </div>
                                 <div class="col-span-1">
                                     <el-form-item label="Уникальный" class="mb-0 col-span-1">
-                                        <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                        <el-input v-model="sizeForm1.header_passport_serial" placeholder="+998" />
                                     </el-form-item>
                                 </div>
                             </div>
                             <el-form-item label="Район" class="mb-0 w-full">
-                                <el-select  v-model="sizeForm1.selectedDistrict2"
+                                <el-select  v-model="sizeForm1.RegionDelivery"
                                     placeholder="Выберите район">
-                                    <el-option v-for="district in sizeForm1.selectedRegionDistricts2" :key="district.id"
-                                        :label="district.name" :value="district.id" />
+                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm1.RegionDetails)?.districts" :key="l" :label="rayon.name"
+                                    :value="rayon.id" />
                                 </el-select>
                             </el-form-item>
                         </div>
@@ -74,7 +74,7 @@
 
                     <div class=" p-[1.5rem] w-full">
                         <el-form-item label="Адрес" class="mb-0 col-span-1">
-                            <el-input v-model="sizeForm1.num" placeholder="+998" />
+                            <el-input v-model="sizeForm1.address" placeholder="Введите адрес..." />
                         </el-form-item>
                     </div>
 
@@ -83,27 +83,27 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div class="col-span-1">
                                 <el-form-item label="Фио" class=" col-span-1">
-                                    <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                    <el-input v-model="sizeForm1.header_name" placeholder="ФИО" />
                                 </el-form-item>
 
                                 <div class="grid grid-cols-3 gap-4">
                                     <el-form-item label="Серия пасспорта" class=" col-span-1">
-                                        <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                        <el-input v-model="sizeForm1.header_passport_serial" placeholder="+998" />
                                     </el-form-item>
                                     <el-form-item label="Номер пасспорта" class=" col-span-2">
-                                        <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                        <el-input v-model="sizeForm1.header_passport_number" placeholder="+998" />
                                     </el-form-item>
                                 </div>
                             </div>
                             <div class="col-span-1">
                                 <el-form-item label="Дата рождения" class="">
-                                    <el-date-picker v-model="sizeForm1.date1" type="date" label="Дата от"
+                                    <el-date-picker v-model="sizeForm1.header_birth_date" type="date" label="Дата от"
                                         placeholder="Дата от" style="width: 100%" />
                                 </el-form-item>
                                 <div class="grid grid-cols-3 gap-4 items-end">
                                     <div class="col-span-2">
                                         <el-form-item label="Номер телефона" class="mb-0 col-span-2">
-                                            <el-input v-model="sizeForm1.num" placeholder="+998" />
+                                            <el-input v-model="sizeForm1.mobile_phone" placeholder="+998" />
                                         </el-form-item>
                                     </div>
                                     <div class="col-span-1">
@@ -129,8 +129,7 @@
                     </div>
                 </el-form>
                 <div class="flex p-4 justify-end w-full"><button
-                        class="border border-[#2CB26D] text-[#2CB26D] text-base my-[1.5rem] py-2 px-5 rounded-md">Добавить
-                        новый адрес</button></div>
+                        class="border border-[#2CB26D] text-[#2CB26D] text-base my-[1.5rem] py-2 px-5 rounded-md">Сохранить</button></div>
 
 
             </div>
@@ -139,8 +138,30 @@
     </div>
 </template>
 <script setup>
+import { ref, reactive, computed, onMounted } from "vue";
+import { useApi } from "@/composables/useApi";
+import { useDictionaryStore } from '~/stores/dictionary'
 const dictionaryStore = useDictionaryStore()
-const regions2 = dictionaryStore.regions
+const regions = dictionaryStore.regions
+
+const sizeForm1 = reactive({
+    RegionDetails: null,
+    RegionDelivery: null,
+})
+const getUserProfile = async () => {
+  try {
+    const res = await useApi("/api/v2/buyer/profile", {});
+
+    if (res && res.data) {
+      for (let i in res.data) {
+        sizeForm1[i] = res.data[i];
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching user details:", error);
+  }
+};
+
 
 const size = ref('default')
 const labelPosition = ref('right')
@@ -149,19 +170,7 @@ const pagination = reactive({
     page_size: 15,
     page: 1
 })
-const sizeForm1 = reactive({
-    selectedRegion2: null,
-    selectedDistrict2: null,
-    regions2: computed(() => regions2),
-    // selectedStreet: null,
-    // Добавляем вычисляемые свойства внутри sizeForm
-    get selectedRegionDistricts2() {
-        const region2 = regions2.find(b => b.id === this.selectedRegion2)
-        return region2 ? region2.districts : []
-    },
 
-  
-})
 const tableData = [
     {
         date: '2016-05-03',
@@ -208,6 +217,10 @@ const notifs = [
 function onSubmit() {
     console.log('submit!')
 }
+
+onMounted(() => {
+  getUserProfile();
+});
 </script>
 
 <style>

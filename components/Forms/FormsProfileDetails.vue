@@ -35,9 +35,9 @@
                                     placeholder="Дата от" style="width: 100%" />
                             </el-form-item>
                             <el-form-item label="Регион" class="mb-0">
-                                <el-select v-model="sizeForm.selectedRegion" placeholder="Выберите регион">
-                                    <el-option v-for="region in sizeForm.regions" :key="region.id" :label="region.name"
-                                        :value="region.id" />
+                                <el-select v-model="sizeForm.RegionDetails" placeholder="Выберите регион">
+                                    <el-option v-for="(region,j) in regions" :key="j" :label="region.name"
+                                    :value="region.id" />
                                 </el-select>
                             </el-form-item>
                         </div>
@@ -51,9 +51,9 @@
                                 </el-form-item>
                             </div>
                             <el-form-item label="Район" class="mb-0">
-                                <el-select v-model="sizeForm.selectedDistrict" placeholder="Выберите район">
-                                    <el-option v-for="district in sizeForm.selectedRegionDistricts" :key="district.id"
-                                        :label="district.name" :value="district.id" />
+                                <el-select v-model="sizeForm.RayonDetails" placeholder="Выберите район">
+                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm.RegionDetails)?.districts" :key="l" :label="rayon.name"
+                                    :value="rayon.id" />
                                 </el-select>
                             </el-form-item>
                         </div>
@@ -64,14 +64,14 @@
                         <div class="grid grid-cols-3 gap-4 ">
                             <el-form-item label="Регион" class="mb-0 w-full">
                                 
-                                <el-select v-model="sizeForm.selectedRegion1" placeholder="Выберите регион">
+                                <el-select v-model="sizeForm.RegionDelivery" placeholder="Выберите регион">
                                     <el-option v-for="(region,j) in regions" :key="j" :label="region.name"
                                     :value="region.id" />
                                 </el-select>
                             </el-form-item>
                             <el-form-item label="Район" class="mb-0 w-full">
-                                <el-select v-model="sizeForm.selectedDistrict1" placeholder="Выберите район">
-                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm.selectedRegion1)?.districts" :key="l" :label="rayon.name"
+                                <el-select v-model="sizeForm.RayonDelivery" placeholder="Выберите район">
+                                    <el-option v-for="(rayon,l) in regions.find(f => f.id === sizeForm.RegionDelivery)?.districts" :key="l" :label="rayon.name"
                                     :value="rayon.id" />
                                 </el-select>
                             </el-form-item>
@@ -98,7 +98,7 @@
                                 </el-select>
                             </el-form-item>
                             <el-form-item label="Укажите адрес" class="mb-0">
-                                <el-input v-model="sizeForm.num" :value="address" :placeholder="adres.address" />
+                                <el-input v-model="sizeForm.num" :value="adres.address" :placeholder="adres.address" />
                             </el-form-item>
                         </div>
                     </div>
@@ -110,22 +110,23 @@
                         <div class="py-[1.5rem] flex flex-col border-t-2 p-[1.5rem]">
                             <h1 class="font-medium text-xl">Способ получения уведомления</h1>
                             <div class="my-5 flex gap-5 max-md:flex-col">
-                                <BaseCheck :notifs="notifs" :message_type="message_type" />
+                                <BaseCheck :notifs="notifs" :message_type="sizeForm.message_type" />
                             </div>
                         </div>
                     </div>
                     <div class="flex p-4 justify-end w-full"><button
-                            class="border border-[#2CB26D] text-[#2CB26D] text-base my-[1.5rem] py-2 px-5 rounded-md">Добавить
-                            новый адрес</button></div>
+                            class="border border-[#2CB26D] text-[#2CB26D] text-base my-[1.5rem] py-2 px-5 rounded-md">Сохранить</button></div>
 
                 </el-form>
             </div>
         </div>
     </div>
-    <pre class="text-black">{{  regions.find(f => f.id === sizeForm.selectedDistrict1)?.districts }} {{ sizeForm  }}</pre>
+    <!-- <pre class="text-black"> {{ sizeForm }}</pre> -->
 </template>
   
 <script setup>
+
+// const props = defineProps(['sizeForm.type_activity']);
 import { ref, reactive, computed } from 'vue'
 import { useDictionaryStore } from '~/stores/dictionary'
 import { useApi } from '@/composables/useApi'
@@ -138,22 +139,13 @@ import { useApi } from '@/composables/useApi'
 
 const dictionaryStore = useDictionaryStore()
 const regions = dictionaryStore.regions
-const regions1 = dictionaryStore.regions
+
 
 const sizeForm = reactive({
-    regionpast: null,
-    regionAdress: null,
-    selectedRegion: null,
-    selectedRegion1: null,
-    selectedDistrict: null,
-    selectedDistrict1: null,
-    // regions: computed(() => regions),
-    // regions1: computed(() => regions1),
-    // Добавляем вычисляемые свойства внутри sizeForm
-    get selectedRegionDistricts() {
-        const region = regions.find(r => r.id === this.selectedRegion)
-        return region ? region.districts : []
-    },
+    RegionDetails: null,
+    RegionDelivery: null, 
+    RayonDelivery: null,
+    RayonDetails: null,
 })
 const tableData = [
     {
@@ -195,23 +187,7 @@ const actives = [
     },
 ]
 
-const notifs = [
-    {
-        id: 1,
-        icon: 'icon_message-text',
-        title: 'СМС',
-    },
-    {
-        id: 2,
-        icon: 'icon_telegram-plane',
-        title: 'Телеграм бот',
-    },
-    {
-        id: 3,
-        icon: 'icon_sms',
-        title: 'Электронная почта',
-    },
-]
+
 
 const getUserDetails = async () => {
   await useApi('/api/v1/user', {}).then((res)=>{

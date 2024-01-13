@@ -9,12 +9,11 @@
     </div>
   </div>
 
-  {{ message_type }}
 </template>
 
 <script setup>
 const props = defineProps(['message_type']);
-import { ref, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 
 const checkBoxList = ref([
   {
@@ -37,20 +36,19 @@ const checkBoxList = ref([
   },
 ]);
 
+// Метод для обновления значения valid на основе свойства message_type
+const updateValidity = (value) => {
+  if (value) {
+    const types = value.split(',').map(type => type.trim());
+    checkBoxList.value.forEach(item => {
+      item.valid = types.includes(item.message_type);
+    });
+  }
+};
 
+// Следим за изменениями в props.message_type
+watch(() => props.message_type, (newValue) => {
+  updateValidity(newValue);
+});
 
-// onMounted(() => {
-//   const types = props.message_type.split(',');
-
-//   checkBoxList.value.forEach(item => {
-//     item.valid = types.includes(item.message_type);
-//   });
-// });
-// watch(() => props.message_type, (newValue, oldValue) => {
-//   console.log('Prop "message_type" changed:', newValue, oldValue);
-//   // Do something with the new value
-// });
 </script>
-
-<style>
-</style>

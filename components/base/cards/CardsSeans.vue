@@ -10,8 +10,13 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
+<<<<<<< HEAD
                     <span class=" bg-slate-100 px-1 py-0.5 rounded text-xs" :class="{ 'text-[#32B98C]': nowstatus == active.status },{ 'bg-[#32B98C1F]': nowstatus == active.status }"><span class="max-md:hidden">{{ active.seans }}</span> <span class="max-md:block hidden"> <Icon name="icon-check_circle" w="16px" /> </span></span>
                     <button> <Icon :name="active.icon" class="w-5"  /></button>
+=======
+                    <span class=" bg-slate-100 px-1 py-0.5 rounded text-xs" :class="{ 'text-[#32B98C]': nowstatus == active.status },{ 'bg-[#32B98C1F]': nowstatus == active.status }"><span class="max-md:hidden">{{ active.seans }}</span> <span class="max-md:block hidden"> <Icon name="check_circle" w="16px" /> </span></span>
+                    <button> <Icon :name="active.icon" w="24px"  /></button>
+>>>>>>> 0d4970cb4362a997a0944363a220d54ca43e25bd
                 </div>
             </div>
         </li>

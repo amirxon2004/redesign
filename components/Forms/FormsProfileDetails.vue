@@ -121,7 +121,7 @@
             </div>
         </div>
     </div>
-    <pre class="text-black"> {{ sizeForm }}</pre>
+    <!-- <pre class="text-black"> {{ sizeForm }}</pre> -->
     
 </template>
   

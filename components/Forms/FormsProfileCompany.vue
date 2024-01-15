@@ -136,7 +136,7 @@
 
         </div>
     </div>
- <!-- <pre>{{ regions }}</pre> -->
+ <!-- <pre>{{ sizeForm1 }}</pre> -->
 </template>
 <script setup>
 import { ref, reactive, computed, onMounted } from "vue";

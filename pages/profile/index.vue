@@ -20,12 +20,12 @@
         </div>
         <div class="active-tab w-full">
           <FormsProfileDetails v-if="activeIndex == 1" />
-          <!-- <FormsProfileCompany
+          <FormsProfileCompany
             v-if="activeIndex == 2 && UserActive.type_activity === 'LEGAL'"
-          /> -->
-          <FormsProfileCompany   />
+          />
+          <!-- <FormsProfileCompany   /> -->
 
-          <pre>{{ UserCompany }}</pre>
+          <!-- <pre>{{ UserCompany }}</pre> -->
         </div>
       </div>
     </div>
